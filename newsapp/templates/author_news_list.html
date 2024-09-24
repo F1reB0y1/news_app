@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>News by {{ author.first_name }} {{ author.last_name }}</h1>
+  <ul>
+    {% for news in news_list %}
+      <li>
+        <a href="{% url 'news_detail' news.pk %}">{{ news.title }}</a>
+        <p>Date: {{ news.date_of_publication }}</p>
+        <p>{{ news.full_text_of_material|truncatewords:20 }}</p>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

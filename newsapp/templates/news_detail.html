@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>{{ news.title }}</h1>
+  <p>Author: {{ news.author.first_name }} {{ news.author.last_name }}</p>
+  <p>Date: {{ news.date_of_publication }}</p>
+  <p>{{ news.full_text_of_material }}</p>
+{% endblock %}``
